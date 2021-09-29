@@ -14,58 +14,25 @@
 <body>
 
   <!-- header section -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">COMP-229</a>
+  <%- include('./components/header.ejs'); %>
+    <!-- header section -->
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- header section -->
+    <!-- Main Content -->
 
-  <div class="container">
-    <h1>
-      <%= title %>
-    </h1>
-    <p>Welcome to <%= title %>
-    </p>
-  </div>
+    <main>
+   <%- include('./content/' + page + '.ejs'); %>
+    </main>
 
-  <!-- Footer Section -->
-  <nav class="navbar fixed-bottom navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Copyright &copy; 2021 - Thiago Castilho</a>
-    </div>
-  </nav>
-  <!-- Footer Section -->
+    <!-- Main Content -->
+    <!-- Footer Section -->
+    <%- include('./components/footer.ejs'); %>
+      <!-- Footer Section -->
 
 
-  <!-- Script Section -->
-  <script src="./scripts/app.js"></script>
-  <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./jquery/dist/jquery.min.js"></script>
+      <!-- Script Section -->
+      <script src="./scripts/app.js"></script>
+      <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="./jquery/dist/jquery.min.js"></script>
 </body>
 
 </html>
