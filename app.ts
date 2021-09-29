@@ -3,9 +3,20 @@ import express from 'express';
 import path from 'path';
 import cookieParser from "cookie-parser";
 import logger from 'morgan';
+import mongoose from 'mongoose';
 
 import indexRouter from './routes/index';
 
+// instantiate mongo
+mongoose.connect('mongodb://localhost:27017/shoes');
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function () {
+  console.log('connected to MongoDB at: mongodb://localhost:27017/shoes');
+})
+
+// instantiate express ap
 const app = express();
 
 // view engine setup
